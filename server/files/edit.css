@@ -43,7 +43,7 @@ select[multiple] {
   height: 150px;
 }
 
-/* Add a nice glow effect when the user is typing */
+/* glow effect while typing */
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: #0369a1;
@@ -57,7 +57,7 @@ form div:last-of-type {
   margin-top: 10px;
 }
 
-/* Reusing your awesome sharp button style for Save and Cancel */
+
 button {
   background-color: #0369a1;
   color: #bae6fd;
