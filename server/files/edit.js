@@ -98,7 +98,6 @@ function putMovie() {
     xhr.send(jsonString);
   }
 
-/** Loading and setting the movie data for the movie with the passed imdbID */
 const imdbID = new URLSearchParams(window.location.search).get("imdbID");
 
 const xhr = new XMLHttpRequest();
