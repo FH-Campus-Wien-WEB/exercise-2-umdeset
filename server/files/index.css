@@ -1,41 +1,174 @@
 @import url(base.css);
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
+body {
+  background-color: #293845;      /*himmelblau*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*schriftart*/
+  /* padding: 40px 50px;        /* rand */
+  /* display: flex;
+  /* flex-wrap: wrap;
+   justify-content: center;
+   /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ein article ist min 300 px lang aber wenn da lücke ist wächst er um 1 so dass keine lücke ist.*/
+  /*gap: 25px; /*abstand zwischen articles*/
+  padding: 40px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
-
-img {
-  border-radius: 12px;
-}
-
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 2vw;
+  background-color: #D2DCE6;      /* article soll eifnach ein weißes hintergrund haben*/
+  border-radius: 15px;        /* kanten runden damit das schöner ausschaut */
+  padding: 20px;                 /* abstand zwischen text und article rand*/
+  /* margin-bottom: 20px;        /* abstand zum nächsten film */
+  display: flex;
+  flex-direction: column; /* dafür dass alle article gleich auschauen, obwohl ein text mal länger ist*/
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.4); /*einfach ganz leicht schatten wenn keine interaktion */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /*easy animation wenn man interagiert, karte geht hoch und schatten wird dunkler*/
+  width: 260px;
+  overflow: hidden; /*bildecken schneiden*/
 }
-
-span {
-  margin-right: 4px;
+article:hover {
+  transform: translateY(-8px);    /* article schwebt bisschen hoch*/
+  box-shadow: 0 15px 40px rgba(186, 230, 253, 0.4); /*schatten wird krasser*/
 }
-
 .genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
+  background-color: #bae6fd; /* Helles Blau */
+  color: #0369a1; /* Dunkelblau für den Text */
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 10px;
   font-weight: bold;
+  font-size: 0.9em;
+  transition: all 0.3s ease; /* simple animation wieder*/
 }
 
-input {
-  width: 100%;
+.genre:hover {
+  background-color: #0284c7; /* blau wird dunkler */
+  color: #ffffff; /* text wird weiß */
+  box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8; /* glow effekt, macht einfach unser schatten in blau*/
+  cursor: default;
+}
+img{
+  width: calc(100% + 40px);
+  max-width: none;
+  margin: -20px -20px 20px -20px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+  border-bottom: 6px solid #3D5468;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+article:hover img{
+  border-bottom-color: #526E87;
+  box-shadow: 0 4px 15px rgba(82, 110, 135, 0.8);
+}
+h2{
+  color: #0369a1;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 800;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75px;
+}
+.movie-info{
+  color: #012132;
+  font-weight: 800;
+
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.rating-container{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.imdb {
+  background-color: #F5C518;
+  color: #000000;
+  font-family: Impact, 'Arial Black', sans-serif;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+}
+.metascore {
+  background-color: #66CC33;
+  color: #000000;
+  font-family: 'Arial Black', Arial, sans-serif;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.genre {
+  background-color: #bae6fd;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85em;
+  transition: all 0.3s ease;
+}
+h3{
+  color: #406a7a;
+  text-align: center;
+  border-bottom: 3px solid #607483;
+  padding-bottom: 8px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}li {
+   color: #012132;
+   font-weight: normal;
+   margin-bottom: 5px;
+   line-height: 1.4;
+ }
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+article p:last-of-type {
+  border-top: 3px solid #0369a1;
+  padding-top: 30px;
+  margin-top: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 0.85em;
+  line-height: 1.5;
+  text-align: justify;
+}
+.edit-btn {
+  background-color: #0369a1; /* Now dark blue */
+  color: #bae6fd; /* Now light blue */
+  padding: 6px 15px; /* Thinner top and bottom padding */
+  border-radius: 0px; /* Sharp edges, not round */
+  border: 2px solid #000000;
+  font-weight: bold;
+  font-size: 0.95em;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-select {
-  width: 100%;
-}
-
-textarea {
-  width: 100%;
+.edit-btn:hover {
+  background-color: #bae6fd; /* Inverts to light blue on hover */
+  color: #0369a1; /* Text inverts to dark blue */
+  box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8; /* Keeps your cool glow effect */
 }

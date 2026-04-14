@@ -1,11 +1,78 @@
 @import url(base.css);
 
-input,
-select,
-textarea {
-  width: 100%;
+/* Center the form and make it look like a movie card */
+form {
+  background-color: #D2DCE6; /* The light card background */
+  max-width: 600px;
+  margin: 40px auto; /* Centers the form horizontally */
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between each input group */
 }
 
-div {
-  margin: 4px 0px;
+/* Style the wrapper around each label/input pair */
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the labels */
+label {
+  color: #0369a1;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+/* Style the text boxes, dropdowns, and text areas */
+input, select, textarea {
+  padding: 12px;
+  border: 2px solid #607483;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1em;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Make the multi-select box a bit taller */
+select[multiple] {
+  height: 150px;
+}
+
+/* Add a nice glow effect when the user is typing */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0369a1;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+/* Make the button container row horizontal */
+form div:last-of-type {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Reusing your awesome sharp button style for Save and Cancel */
+button {
+  background-color: #0369a1;
+  color: #bae6fd;
+  padding: 10px 25px; /* Slightly thicker for the form */
+  border-radius: 0px; /* Sharp edges */
+  border: 2px solid #000000; /* Black outline */
+  font-weight: bold;
+  font-size: 1.05em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 48%; /* Buttons sit side-by-side */
+}
+
+button:hover {
+  background-color: #bae6fd;
+  color: #0369a1;
+  box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8;
 }
